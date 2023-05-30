@@ -27,12 +27,12 @@ public class NotesManager : MonoBehaviour
     }
 
     public int noteNum;//総ノーツ数
-    private string songName;
+    private string songName;//曲名入れる変数
 
-    public List<int> LaneNum = new List<int>();
-    public List<int> NoteType = new List<int>();
-    public List<float> NotesTime = new List<float>();
-    public List<GameObject> NotesObj = new List<GameObject>();
+    public List<int> LaneNum = new List<int>();//何番のrレーンに落ちてくるか
+    public List<int> NoteType = new List<int>();//ノーツの種類
+    public List<float> NotesTime = new List<float>();//判定線と重なる時間
+    public List<GameObject> NotesObj = new List<GameObject>();//GameObject
 
     [SerializeField] private float NotesSpeed;
     [SerializeField] GameObject noteObj;

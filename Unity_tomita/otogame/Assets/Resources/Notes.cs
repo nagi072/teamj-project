@@ -9,6 +9,6 @@ public class Notes : MonoBehaviour
     void Update()
     {
         //ƒm[ƒc‚ğˆÚ“®‚³‚¹‚é
-        transform.position -= transform.forward * Time.deltaTime * NoteSpeed;
+        transform.position -= transform.up * Time.deltaTime * NoteSpeed;
     }
 }
