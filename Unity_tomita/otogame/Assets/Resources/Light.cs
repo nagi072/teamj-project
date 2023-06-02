@@ -24,28 +24,42 @@ public class Light : MonoBehaviour
 
         if (num == 1)
         {
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.S))
             {
                 colorChange();
             }
         }
         if (num == 2)
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.D))
             {
                 colorChange();
             }
         }
         if (num == 3)
         {
-            if (Input.GetKeyDown(KeyCode.J))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 colorChange();
             }
         }
         if (num == 4)
         {
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                colorChange();
+            }
+        }
+        if (num == 5)
+        {
             if (Input.GetKeyDown(KeyCode.K))
+            {
+                colorChange();
+            }
+        }
+        if (num == 6)
+        {
+            if (Input.GetKeyDown(KeyCode.L))
             {
                 colorChange();
             }
