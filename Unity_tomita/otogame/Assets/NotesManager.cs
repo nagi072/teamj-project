@@ -35,10 +35,11 @@ public class NotesManager : MonoBehaviour
     [SerializeField] private float NotesSpeed;//ノーツスピード
     [SerializeField] GameObject noteObj;//ノーツのプレハブを入れる
 
+
     void OnEnable()
     {
         noteNum = 0;//総ノーツ数を0に
-        songName = "テスト";//プレイする曲名を取得
+        songName = "仮.wav";//プレイする曲名を取得
         Load(songName);//Load()を呼び出す
     }
 
