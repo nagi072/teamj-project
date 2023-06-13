@@ -51,9 +51,9 @@ public class NotesManager : MonoBehaviour
 
         for (int i = 0; i < inputJson.notes.Length; i++)
         {
-            float kankaku = 60 / (inputJson.BPM * (float)inputJson.notes[i].LPB);
+            float kankaku = 160 / (inputJson.BPM * (float)inputJson.notes[i].LPB);
             float beatSec = kankaku * (float)inputJson.notes[i].LPB;
-            float time = (beatSec * inputJson.notes[i].num / (float)inputJson.notes[i].LPB) + inputJson.offset + 0.01f;
+            float time = (beatSec * inputJson.notes[i].num / (float)inputJson.notes[i].LPB) + inputJson.offset - 14897f;
             NotesTime.Add(time);
             LaneNum.Add(inputJson.notes[i].block);
             NoteType.Add(inputJson.notes[i].type);
