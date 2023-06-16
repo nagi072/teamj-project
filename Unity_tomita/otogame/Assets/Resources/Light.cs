@@ -5,7 +5,7 @@ using UnityEngine;
 public class Light : MonoBehaviour
 {
     [SerializeField] private float Speed = 3;
-    [SerializeField] private int num = 0;
+    [SerializeField] private int Num = 0;
     private Renderer rend;
     private float alfa = 0;
     void Start()
@@ -20,42 +20,42 @@ public class Light : MonoBehaviour
             rend.material.color = new Color(rend.material.color.r, rend.material.color.r, rend.material.color.r, alfa);
         }
 
-        if (num == 1)
+        if (Num == 1)
         {
             if (Input.GetKeyDown(KeyCode.S))
             {
                 colorChange();
             }
         }
-        if (num == 2)
+        if (Num == 2)
         {
             if (Input.GetKeyDown(KeyCode.D))
             {
                 colorChange();
             }
         }
-        if (num == 3)
+        if (Num == 3)
         {
             if (Input.GetKeyDown(KeyCode.F))
             {
                 colorChange();
             }
         }
-        if (num == 4)
+        if (Num == 4)
         {
             if (Input.GetKeyDown(KeyCode.J))
             {
                 colorChange();
             }
         }
-        if (num == 5)
+        if (Num == 5)
         {
             if (Input.GetKeyDown(KeyCode.K))
             {
                 colorChange();
             }
         }
-        if (num == 6)
+        if (Num == 6)
         {
             if (Input.GetKeyDown(KeyCode.L))
             {
