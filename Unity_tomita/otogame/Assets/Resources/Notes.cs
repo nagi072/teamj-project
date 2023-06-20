@@ -5,7 +5,7 @@ using UnityEngine;
 public class Notes : MonoBehaviour
 {
     //ノーツのスピードを設定
-    int NoteSpeed = 10;
+    int NoteSpeed = 7;
     void Update()
     {
         //ノーツを移動させる

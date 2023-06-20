@@ -51,7 +51,7 @@ public class NotesManager : MonoBehaviour
 
         for (int i = 0; i < inputJson.notes.Length; i++)
         {
-            float kankaku = 160 / (inputJson.BPM * (float)inputJson.notes[i].LPB);
+            float kankaku = 70 / (inputJson.BPM * (float)inputJson.notes[i].LPB);
             float beatSec = kankaku * (float)inputJson.notes[i].LPB;
             float time = (beatSec * inputJson.notes[i].num / (float)inputJson.notes[i].LPB) + inputJson.offset - 14897f;
             NotesTime.Add(time);
@@ -59,7 +59,7 @@ public class NotesManager : MonoBehaviour
             NoteType.Add(inputJson.notes[i].type);
 
             float y = NotesTime[i] * NotesSpeed;
-            NotesObj.Add(Instantiate(noteObj, new Vector3(inputJson.notes[i].block - 12.5f, y, -1f), Quaternion.identity));
+            NotesObj.Add(Instantiate(noteObj, new Vector3(inputJson.notes[i].block - 2.5f, y, -1f), Quaternion.identity));
         }
     }
 }

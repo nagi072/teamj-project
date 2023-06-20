@@ -51,7 +51,7 @@ public class NotesManager1 : MonoBehaviour
 
         for (int i = 0; i < inputJson.notes.Length; i++)
         {
-            float kankaku = 160 / (inputJson.BPM * (float)inputJson.notes[i].LPB);
+            float kankaku = 130 / (inputJson.BPM * (float)inputJson.notes[i].LPB);
             float beatSec = kankaku * (float)inputJson.notes[i].LPB;
             float time = (beatSec * inputJson.notes[i].num / (float)inputJson.notes[i].LPB) + inputJson.offset - 0.5f;
             NotesTime.Add(time);
