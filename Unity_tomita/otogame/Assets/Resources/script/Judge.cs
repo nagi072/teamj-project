@@ -56,6 +56,11 @@ public class Judge : MonoBehaviour
             }
         }
 
+        if (0 == notesManager.NotesTime.Count)
+        {
+            return;
+        }
+
         if (Time.time > notesManager.NotesTime[0] + 0.21f + GManager.instance.StartTime)//–{—ˆƒm[ƒc‚ğ‚½‚½‚­‚×‚«ŠÔ‚©‚ç0.2•b‚½‚Á‚Ä‚à“ü—Í‚ª‚È‚©‚Á‚½ê‡
         {
             message(3);
