@@ -13,7 +13,7 @@ public class Judge : MonoBehaviour
         {
             if (notesManager.LaneNum[0] == 1)//押されたボタンはレーンの番号とあっているか？
             {
-                Judgement(GetABS(Time.time - notesManager.NotesTime[0]));
+                Judgement(GetABS(Time.time - (notesManager.NotesTime[0] + GManager.instance.StartTime)));
                 /*
                 本来ノーツをたたく場所と実際にたたいた場所がどれくらいずれているかを求め、
                 その絶対値をJudgement関数に送る
@@ -24,43 +24,45 @@ public class Judge : MonoBehaviour
         {
             if (notesManager.LaneNum[0] == 2)
             {
-                Judgement(GetABS(Time.time - notesManager.NotesTime[0]));
+                Judgement(GetABS(Time.time - (notesManager.NotesTime[0] + GManager.instance.StartTime)));
             }
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
             if (notesManager.LaneNum[0] == 3)
             {
-                Judgement(GetABS(Time.time - notesManager.NotesTime[0]));
+                Judgement(GetABS(Time.time - (notesManager.NotesTime[0] + GManager.instance.StartTime)));
             }
         }
         if (Input.GetKeyDown(KeyCode.J))
         {
             if (notesManager.LaneNum[0] == 4)
             {
-                Judgement(GetABS(Time.time - notesManager.NotesTime[0]));
+                Judgement(GetABS(Time.time - (notesManager.NotesTime[0] + GManager.instance.StartTime)));
             }
         }
         if (Input.GetKeyDown(KeyCode.K))
         {
             if (notesManager.LaneNum[0] == 5)
             {
-                Judgement(GetABS(Time.time - notesManager.NotesTime[0]));
+                Judgement(GetABS(Time.time - (notesManager.NotesTime[0] + GManager.instance.StartTime)));
             }
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
             if (notesManager.LaneNum[0] == 6)
             {
-                Judgement(GetABS(Time.time - notesManager.NotesTime[0]));
+                Judgement(GetABS(Time.time - (notesManager.NotesTime[0] + GManager.instance.StartTime)));
             }
         }
 
-        if (Time.time > notesManager.NotesTime[0] + 0.21f)//本来ノーツをたたくべき時間から0.2秒たっても入力がなかった場合
+        if (Time.time > notesManager.NotesTime[0] + 0.21f + GManager.instance.StartTime)//本来ノーツをたたくべき時間から0.2秒たっても入力がなかった場合
         {
             message(3);
             deleteData();
             Debug.Log("Miss");
+            GManager.instance.miss++;
+            GManager.instance.combo = 0;
             //ミス
         }
     }
@@ -70,6 +72,8 @@ public class Judge : MonoBehaviour
         {
             Debug.Log("Perfect");
             message(0);
+            GManager.instance.perfect++;
+            GManager.instance.combo++;
             deleteData();
         }
         else
@@ -78,6 +82,8 @@ public class Judge : MonoBehaviour
             {
                 Debug.Log("Great");
                 message(1);
+                GManager.instance.great++;
+                GManager.instance.combo++;
                 deleteData();
             }
             else
@@ -86,6 +92,8 @@ public class Judge : MonoBehaviour
                 {
                     Debug.Log("Bad");
                     message(2);
+                    GManager.instance.bad++;
+                    GManager.instance.combo++;
                     deleteData();
                 }
             }
