@@ -11,7 +11,7 @@ public class Judge : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S))//〇キーが押されたとき
         {
-            if (notesManager.LaneNum[0] == 1)//押されたボタンはレーンの番号とあっているか？
+            if (notesManager.LaneNum[0] == 0)//押されたボタンはレーンの番号とあっているか？
             {
                 Judgement(GetABS(Time.time - (notesManager.NotesTime[0] + GManager.instance.StartTime)));
                 /*
@@ -22,35 +22,35 @@ public class Judge : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if (notesManager.LaneNum[0] == 2)
+            if (notesManager.LaneNum[0] == 1)
             {
                 Judgement(GetABS(Time.time - (notesManager.NotesTime[0] + GManager.instance.StartTime)));
             }
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (notesManager.LaneNum[0] == 3)
+            if (notesManager.LaneNum[0] == 2)
             {
                 Judgement(GetABS(Time.time - (notesManager.NotesTime[0] + GManager.instance.StartTime)));
             }
         }
         if (Input.GetKeyDown(KeyCode.J))
         {
-            if (notesManager.LaneNum[0] == 4)
+            if (notesManager.LaneNum[0] == 3)
             {
                 Judgement(GetABS(Time.time - (notesManager.NotesTime[0] + GManager.instance.StartTime)));
             }
         }
         if (Input.GetKeyDown(KeyCode.K))
         {
-            if (notesManager.LaneNum[0] == 5)
+            if (notesManager.LaneNum[0] == 4)
             {
                 Judgement(GetABS(Time.time - (notesManager.NotesTime[0] + GManager.instance.StartTime)));
             }
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
-            if (notesManager.LaneNum[0] == 6)
+            if (notesManager.LaneNum[0] == 5)
             {
                 Judgement(GetABS(Time.time - (notesManager.NotesTime[0] + GManager.instance.StartTime)));
             }
@@ -61,7 +61,7 @@ public class Judge : MonoBehaviour
             return;
         }
 
-        if (Time.time > notesManager.NotesTime[0] + 0.21f + GManager.instance.StartTime)//本来ノーツをたたくべき時間から0.2秒たっても入力がなかった場合
+            if (Time.time > notesManager.NotesTime[0] + 0.21f + GManager.instance.StartTime)//本来ノーツをたたくべき時間から0.2秒たっても入力がなかった場合
         {
             message(3);
             deleteData();

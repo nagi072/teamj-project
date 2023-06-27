@@ -15,6 +15,7 @@ public class MusicManager : MonoBehaviour
         audio = GetComponent<AudioSource>();
         Music = (AudioClip)Resources.Load("Musics/" + songName);
         played = false;
+
     }
 
     // Update is called once per frame
