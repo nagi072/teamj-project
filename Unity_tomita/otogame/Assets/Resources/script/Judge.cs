@@ -7,7 +7,8 @@ public class Judge : MonoBehaviour
     //変数の宣言
     [SerializeField] private GameObject[] MessageObj;//プレイヤーに判定を伝えるゲームオブジェクト
     [SerializeField] NotesManager notesManager;//スクリプト「notesManager」を入れる変数
-    void Update()
+
+void Update()
     {
         if (Input.GetKeyDown(KeyCode.S))//〇キーが押されたとき
         {
@@ -115,11 +116,12 @@ public class Judge : MonoBehaviour
             return -num;
         }
     }
-    void deleteData()//すでにたたいたノーツを削除する関数
+    public void deleteData()//すでにたたいたノーツを削除する関数
     {
         notesManager.NotesTime.RemoveAt(0);
         notesManager.LaneNum.RemoveAt(0);
         notesManager.NoteType.RemoveAt(0);
+        notesManager.NotesObj.RemoveAt(0);
     }
 
     void message(int judge)//判定を表示する
