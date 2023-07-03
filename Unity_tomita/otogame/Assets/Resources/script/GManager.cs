@@ -6,6 +6,9 @@ public class GManager : MonoBehaviour
 {
     public static GManager instance = null;
 
+    public float maxScore;
+    public float ratioScore;
+
     public int songID;
     public float noteSpeed;
 

@@ -8,6 +8,7 @@ public class Notes : MonoBehaviour
     int NoteSpeed = 6;
     bool start;
 
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
