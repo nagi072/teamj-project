@@ -38,6 +38,7 @@ public class NotesManager : MonoBehaviour
 
     void OnEnable()
     {
+        NotesSpeed = GManager.instance.noteSpeed;
         noteNum = 0;//総ノーツ数を0に
         songName = "kari.wav";//プレイする曲名を取得
         Load(songName);//Load()を呼び出す
@@ -49,17 +50,20 @@ public class NotesManager : MonoBehaviour
         Data inputJson = JsonUtility.FromJson<Data>(inputString); // jsonファイルを読み込む
 
         noteNum = inputJson.notes.Length;//総ノーツ数を設定
+        GManager.instance.maxScore = noteNum * 5;
 
         for (int i = 0; i < inputJson.notes.Length; i++)
         {
             float kankaku = 60 / (inputJson.BPM * (float)inputJson.notes[i].LPB);
             float beatSec = kankaku * (float)inputJson.notes[i].LPB;
-            float time = (beatSec * inputJson.notes[i].num / (float)inputJson.notes[i].LPB) + inputJson.offset + 0.01f;
+            float notesoffset = inputJson.offset * 0.01f;
+            float time = (beatSec * inputJson.notes[i].num / (float)inputJson.notes[i].LPB) + notesoffset;
+
             NotesTime.Add(time);
             LaneNum.Add(inputJson.notes[i].block);
             NoteType.Add(inputJson.notes[i].type);
 
-            float y = NotesTime[i] * NotesSpeed;
+            float y = NotesTime[i] * NotesSpeed-2;
             NotesObj.Add(Instantiate(noteObj, new Vector3(inputJson.notes[i].block - 1.5f, y, -1f), Quaternion.identity));
         }
     }
