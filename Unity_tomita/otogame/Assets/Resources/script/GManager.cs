@@ -6,8 +6,8 @@ public class GManager : MonoBehaviour
 {
     public static GManager instance = null;
 
-    public float maxScore;
-    public float ratioScore;
+    public float maxScore;//new!!
+    public float ratioScore;//new!!
 
     public int songID;
     public float noteSpeed;
@@ -22,7 +22,6 @@ public class GManager : MonoBehaviour
     public int great;
     public int bad;
     public int miss;
-
     public void Awake()
     {
         if (instance == null)
@@ -35,4 +34,5 @@ public class GManager : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
 }

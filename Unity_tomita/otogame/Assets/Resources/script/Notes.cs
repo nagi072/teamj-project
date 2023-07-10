@@ -5,10 +5,13 @@ using UnityEngine;
 public class Notes : MonoBehaviour
 {
     //ノーツのスピードを設定
-    int NoteSpeed = 6;
+    float NoteSpeed = 6;
     bool start;
 
-
+    //void Start()
+    //{
+      //  NoteSpeed = GManager.instance.noteSpeed;
+    //}
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -17,7 +20,6 @@ public class Notes : MonoBehaviour
         }
         if (start)
         {
-            //ノーツを移動させる
             transform.position -= transform.up * Time.deltaTime * NoteSpeed;
         }
     }

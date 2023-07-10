@@ -35,9 +35,10 @@ public class NotesManager : MonoBehaviour
     [SerializeField] private float NotesSpeed;
     [SerializeField] GameObject noteObj;
 
+
+
     void OnEnable()
     {
-        NotesSpeed = GManager.instance.noteSpeed;
         noteNum = 0;
         songName = "bgm.1";
         Load(songName);
@@ -45,11 +46,11 @@ public class NotesManager : MonoBehaviour
 
     private void Load(string SongName)
     {
+
         string inputString = Resources.Load<TextAsset>(SongName).ToString();
         Data inputJson = JsonUtility.FromJson<Data>(inputString);
 
         noteNum = inputJson.notes.Length;
-        GManager.instance.maxScore = noteNum * 5;
 
         for (int i = 0; i < inputJson.notes.Length; i++)
         {
@@ -63,5 +64,7 @@ public class NotesManager : MonoBehaviour
             float y = NotesTime[i] * NotesSpeed;
             NotesObj.Add(Instantiate(noteObj, new Vector3(inputJson.notes[i].block - 2.5f, y, -1f), Quaternion.identity));
         }
+
+        GManager.instance.maxScore = noteNum * 5;//new!!
     }
 }
