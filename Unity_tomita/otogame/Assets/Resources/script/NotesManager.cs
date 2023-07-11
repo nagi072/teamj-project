@@ -65,6 +65,5 @@ public class NotesManager : MonoBehaviour
             NotesObj.Add(Instantiate(noteObj, new Vector3(inputJson.notes[i].block - 2.5f, y, -1f), Quaternion.identity));
         }
 
-        GManager.instance.maxScore = noteNum * 5;//new!!
     }
 }
