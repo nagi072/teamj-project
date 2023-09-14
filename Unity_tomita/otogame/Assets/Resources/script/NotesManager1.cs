@@ -35,15 +35,18 @@ public class NotesManager1 : MonoBehaviour
     [SerializeField] private float NotesSpeed;
     [SerializeField] GameObject noteObj;
 
+
+
     void OnEnable()
     {
         noteNum = 0;
-        songName = "Kamikaze";
+        songName = "Let's start";
         Load(songName);
     }
 
     private void Load(string SongName)
     {
+
         string inputString = Resources.Load<TextAsset>(SongName).ToString();
         Data inputJson = JsonUtility.FromJson<Data>(inputString);
 
@@ -51,15 +54,16 @@ public class NotesManager1 : MonoBehaviour
 
         for (int i = 0; i < inputJson.notes.Length; i++)
         {
-            float kankaku = 130 / (inputJson.BPM * (float)inputJson.notes[i].LPB);
+            float kankaku = 120 / (inputJson.BPM * (float)inputJson.notes[i].LPB);
             float beatSec = kankaku * (float)inputJson.notes[i].LPB;
-            float time = (beatSec * inputJson.notes[i].num / (float)inputJson.notes[i].LPB) + inputJson.offset * 0.5f;
+            float time = (beatSec * inputJson.notes[i].num / (float)inputJson.notes[i].LPB) + inputJson.offset * 0.00002f;
             NotesTime.Add(time);
             LaneNum.Add(inputJson.notes[i].block);
             NoteType.Add(inputJson.notes[i].type);
 
             float y = NotesTime[i] * NotesSpeed;
-            NotesObj.Add(Instantiate(noteObj, new Vector3(inputJson.notes[i].block - 0f, y, -1f), Quaternion.identity));
+            NotesObj.Add(Instantiate(noteObj, new Vector3(inputJson.notes[i].block - 2.5f, y, -1f), Quaternion.identity));
         }
+
     }
 }

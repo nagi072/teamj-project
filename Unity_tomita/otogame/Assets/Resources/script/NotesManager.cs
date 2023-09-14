@@ -40,7 +40,7 @@ public class NotesManager : MonoBehaviour
     void OnEnable()
     {
         noteNum = 0;
-        songName = "bgm.1";
+        songName = "Let's start";
         Load(songName);
     }
 
