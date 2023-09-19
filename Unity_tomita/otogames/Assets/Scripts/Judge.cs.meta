@@ -3,7 +3,11 @@ guid: 0dfe0eb304f5bd64babd14577941cef8
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - notesManager: {instanceID: 0}
+  - comboText: {instanceID: 0}
+  - scoreText: {instanceID: 0}
+  - hitSound: {fileID: 8300000, guid: ffb8474c33a3953408176a46100b9699, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

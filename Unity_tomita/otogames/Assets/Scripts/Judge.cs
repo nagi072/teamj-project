@@ -7,8 +7,8 @@ public class Judge : MonoBehaviour
     [SerializeField] private GameObject[] MessageObj;//プレイヤーに判定を伝えるゲームオブジェクト
     [SerializeField] NotesManager notesManager;//スクリプト「notesManager」を入れる変数
 
-    [SerializeField] TextMeshProUGUI comboText;//new!!
-    [SerializeField] TextMeshProUGUI scoreText;//new!!
+    [SerializeField] TextMeshProUGUI comboText;
+    [SerializeField] TextMeshProUGUI scoreText;
 
     AudioSource audio;
     [SerializeField] AudioClip hitSound;
@@ -21,6 +21,10 @@ public class Judge : MonoBehaviour
     {
         if (GManager.instance.Start)
         {
+            if (0 == notesManager.NotesTime.Count)
+            {
+                return;
+            }
             if (Input.GetKeyDown(KeyCode.S))//〇キーが押されたとき
             {
                 if (notesManager.LaneNum[0] == 0)//押されたボタンはレーンの番号とあっているか？
@@ -84,6 +88,10 @@ public class Judge : MonoBehaviour
                 GManager.instance.combo = 0;
                 //ミス
             }
+            if(0 == notesManager.NotesTime.Count)
+            {
+                return;
+            }
         }
     }
     void Judgement(float timeLag, int numOffset)
@@ -140,9 +148,8 @@ public class Judge : MonoBehaviour
         notesManager.LaneNum.RemoveAt(numOffset);
         notesManager.NoteType.RemoveAt(numOffset);
         GManager.instance.score = (int)Math.Round(1000000 * Math.Floor(GManager.instance.ratioScore / GManager.instance.maxScore * 1000000) / 1000000);
-        //↑new!!
-        comboText.text = GManager.instance.combo.ToString();//new!!
-        scoreText.text = GManager.instance.score.ToString();//new!!
+        comboText.text = GManager.instance.combo.ToString();
+        scoreText.text = GManager.instance.score.ToString();
     }
 
     void message(int judge)//判定を表示する

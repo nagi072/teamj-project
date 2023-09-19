@@ -10,7 +10,7 @@ public class Notes : MonoBehaviour
 
     void Start()
     {
-        NoteSpeed = GManager.instance.noteSpeed;
+       // NoteSpeed = GManager.instance.noteSpeed;
     }
     void Update()
     {

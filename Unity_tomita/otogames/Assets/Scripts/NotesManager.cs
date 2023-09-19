@@ -38,7 +38,7 @@ public class NotesManager : MonoBehaviour
 
     void OnEnable()
     {
-        NotesSpeed = GManager.instance.noteSpeed;
+       　//NotesSpeed = GManager.instance.noteSpeed;
         noteNum = 0;//総ノーツ数を0に
         songName = "kari.wav";//プレイする曲名を取得
         Load(songName);//Load()を呼び出す
