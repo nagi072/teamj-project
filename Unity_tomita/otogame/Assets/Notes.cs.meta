@@ -1,5 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Unity_tomita/otogame/Assets/Notes.cs.meta
 guid: 1a4ff721dc2e16e4880aae7e656746e4
+=======
+guid: 9aeb208bb57319f429ccaec5cb401321
+timeCreated: 1428036548
+licenseType: Pro
+>>>>>>> Stashed changes:Unity_tomita/otogame/Assets/NoteEditor-master/Assets/Scripts/Utility/SingletonMonoBehaviour.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

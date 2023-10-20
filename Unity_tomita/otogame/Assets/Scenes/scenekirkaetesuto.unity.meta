@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Unity_tomita/otogame/Assets/Scenes/scenekirkaetesuto.unity.meta
 guid: ebd172f965421d84d80cd2629d408fce
+=======
+guid: 81fe30df2539f4e43bb405a0ae5751f0
+folderAsset: yes
+>>>>>>> Stashed changes:Unity_tomita/otogame/Assets/NoteEditor-master/Assets/Plugins/UniRx/Scripts/Async.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
