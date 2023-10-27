@@ -31,11 +31,13 @@ public class NotesManager : MonoBehaviour
     public List<int> NoteType = new List<int>();
     public List<float> NotesTime = new List<float>();
     public List<GameObject> NotesObj = new List<GameObject>();
+    public List<GameObject> LongnotesObj = new List<GameObject>();
 
     [SerializeField] private float NotesSpeed;
     [SerializeField] GameObject noteObj;
+    [SerializeField] GameObject longnoteObj;
 
-
+   
 
     void OnEnable()
     {
