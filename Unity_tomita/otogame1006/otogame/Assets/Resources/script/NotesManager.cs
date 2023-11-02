@@ -32,37 +32,9 @@ public class NotesManager : MonoBehaviour
     public List<float> NotesTime = new List<float>();
     public List<GameObject> NotesObj = new List<GameObject>();
 
-    int[] notetype = new int[2];
-    notetype[0]=public List<int> NoteType = new List<int>(1);
-    notetype[1]=public List<int> NoteType = new List<int>(2);
 
-    string str = notetype;
-    string target = 2;
-
-    int num = str.IndexOf(target);
-
-            if (num > 0)
-            {
-                Console.WriteLine(longnoteObj, target, num + 1);
-
-                // IndexOfメソッドで見つからなくなるまで繰り返す
-                while (num > 0)
-                {
-                    //見つかった位置の次の位置から検索
-                    num = str.IndexOf(target, num + 1);
-                    if (num > 0)
-                    {
-                        Console.WriteLine(longnoteObj, target, num + 1);
-                    }
-                }
-            }else
-        {
-             Console.WriteLine("{0}は見つかりませんでした", target);
-        }
-
-[SerializeField] private float NotesSpeed;
+    [SerializeField] private float NotesSpeed;
     [SerializeField] GameObject noteObj;
-    [SerializeField] GameObject longnoteObj;
 
    
 
