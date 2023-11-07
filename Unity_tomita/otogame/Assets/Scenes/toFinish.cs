@@ -5,20 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class toFinish : MonoBehaviour
 {
-     private void Start()
+     private void Update()
     {
-        // コルーチンの起動
-        StartCoroutine(DelayCoroutine());
+        if (Input.GetKey(KeyCode.Space))
+        {
+            // コルーチンの起動
+            StartCoroutine("owari");
+        }
     }
 
     // コルーチン本体
-    private IEnumerator DelayCoroutine()
+    private IEnumerator owari()
     {
-        transform.position = Vector3.one;
-
         // 3秒間待つ
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1f);
 
-        SceneManager.LoadScene("Men 2yu");
+        SceneManager.LoadScene("men2yu");
     }
 }
