@@ -198,4 +198,3 @@ public class Judge : MonoBehaviour
         Instantiate(MessageObj[judge], new Vector3(notesManager.LaneNum[0] - 2.5f, 0.76f, 1f), Quaternion.Euler(45, 0, 0));
     }
 }
-
