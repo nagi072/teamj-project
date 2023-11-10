@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using TMPro;//new!!
+using UnityEngine.SceneManagement;
 public class Judge : MonoBehaviour
 {
     //•Ï”‚ÌéŒ¾
@@ -9,13 +10,17 @@ public class Judge : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI comboText;//new!!
     [SerializeField] TextMeshProUGUI scoreText;//new!!
+    [SerializeField] GameObject finish;
 
     AudioSource audio;
     [SerializeField] AudioClip hitSound;
 
+    float endTime = 0;
+
     void Start()
     {
         audio = GetComponent<AudioSource>();
+        endTime = notesManager.NotesTime[notesManager.NotesTime.Count - 1];
     }
     void Update()
     {
@@ -115,6 +120,12 @@ public class Judge : MonoBehaviour
                     }
                 }
             }
+            if (Time.time > endTime + GManager.instance.StartTime)
+            {
+                finish.SetActive(true);
+                Invoke("ResultScene", 3f);
+                return;
+            }
 
             if (0 == notesManager.NotesTime.Count)
             {
@@ -196,5 +207,9 @@ public class Judge : MonoBehaviour
     void message(int judge)//”»’è‚ğ•\¦‚·‚é
     {
         Instantiate(MessageObj[judge], new Vector3(notesManager.LaneNum[0] - 2.5f, 0.76f, 1f), Quaternion.Euler(45, 0, 0));
+    }
+    void ResultScene()
+    {
+        SceneManager.LoadScene("Result");
     }
 }
