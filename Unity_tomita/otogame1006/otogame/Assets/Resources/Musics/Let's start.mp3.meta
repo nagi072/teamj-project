@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Unity_tomita/otogame/Assets/Resources/Musics/DIRTY PUNCH.mp3.meta
+guid: 844e4f60e86a6af4ab2023f68762c0e1
+========
+guid: 529835cf7f8ca3b4a80fbd14c70d87e2
+>>>>>>>> nasu:Unity_tomita/otogame1006/otogame/Assets/Resources/Musics/Let's start.mp3.meta
+AudioImporter:
+  externalObjects: {}
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  preloadAudioData: 1
+  loadInBackground: 0
+  ambisonic: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
