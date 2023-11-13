@@ -20,6 +20,6 @@ public class toFinish : MonoBehaviour
         // 3•bŠÔ‘Ò‚Â
         yield return new WaitForSeconds(5f);
 
-        SceneManager.LoadScene("men2yu");
+        SceneManager.LoadScene("rizaruto");
     }
 }

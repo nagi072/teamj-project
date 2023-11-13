@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/men2yu.unity
     guid: dcaf4fb2b016df648b586334c4ebd507
+  - enabled: 1
+    path: Assets/Scenes/rizaruto.unity
+    guid: 8282e89e296feea4982ebee40ec6f902
   m_configObjects: {}
