@@ -5,7 +5,7 @@ using UnityEngine;
 public class Notes : MonoBehaviour
 {
     //ノーツのスピードを設定
-    float NoteSpeed = 6;
+    float NoteSpeed = 8;
     bool start;
 
     //void Start()
