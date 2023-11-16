@@ -18,7 +18,7 @@ public class toFinish : MonoBehaviour
     private IEnumerator owari()
     {
         // 3•bŠÔ‘Ò‚Â
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(25f);
 
         SceneManager.LoadScene("rizaruto");
     }
