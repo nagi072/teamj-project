@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/rizaruto.unity
     guid: 8282e89e296feea4982ebee40ec6f902
+  - enabled: 1
+    path: Assets/Scenes/settei.unity
+    guid: 8890c62ddc33ee84f8c1d438c4b7a4de
   m_configObjects: {}
