@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicManager2 : MonoBehaviour
+public class MusicManager : MonoBehaviour
 {
     AudioSource audio;
     AudioClip Music;
@@ -11,7 +11,7 @@ public class MusicManager2 : MonoBehaviour
     void Start()
     {
         GManager.instance.Start = false;
-        songName = "DIRTY PUNCH-EZ-";
+        songName = "Let's start";
         audio = GetComponent<AudioSource>();
         Music = (AudioClip)Resources.Load("Musics/" + songName);
         played = false;
