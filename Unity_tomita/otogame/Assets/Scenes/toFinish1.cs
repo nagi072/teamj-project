@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class toFinish : MonoBehaviour
+public class toFinish1 : MonoBehaviour
 {
      private void Update()
     {
@@ -18,7 +18,7 @@ public class toFinish : MonoBehaviour
     private IEnumerator owari()
     {
         // 3•bŠÔ‘Ò‚Â
-        yield return new WaitForSeconds(120f);
+        yield return new WaitForSeconds(250f);
 
         SceneManager.LoadScene("rizaruto");
     }

@@ -5,7 +5,7 @@ public class Judge : MonoBehaviour
 {
     //変数の宣言
     [SerializeField] private GameObject[] MessageObj;//プレイヤーに判定を伝えるゲームオブジェクト
-    [SerializeField] NotesManager notesManager;//スクリプト「notesManager」を入れる変数
+    [SerializeField] NotesManager notesManagerb;//スクリプト「notesManager」を入れる変数
 
     [SerializeField] TextMeshProUGUI comboText;//new!!
     [SerializeField] TextMeshProUGUI scoreText;//new!!
@@ -21,16 +21,16 @@ public class Judge : MonoBehaviour
     {
         if (GManager.instance.Start)
         {
-            if (0 == notesManager.NotesTime.Count)
+            if (0 == notesManagerb.NotesTime.Count)
             {
                 return;
             }
 
             if (Input.GetKeyDown(KeyCode.S))//〇キーが押されたとき
             {
-                if (notesManager.LaneNum[0] == 0)//押されたボタンはレーンの番号とあっているか？
+                if (notesManagerb.LaneNum[0] == 0)//押されたボタンはレーンの番号とあっているか？
                 {
-                    Judgement(GetABS(Time.time - (notesManager.NotesTime[0] + GManager.instance.StartTime)), 0);
+                    Judgement(GetABS(Time.time - (notesManagerb.NotesTime[0] + GManager.instance.StartTime)), 0);
                     /*
                     本来ノーツをたたく場所と実際にたたいた場所がどれくらいずれているかを求め、
                     その絶対値をJudgement関数に送る
@@ -38,90 +38,90 @@ public class Judge : MonoBehaviour
                 }
                 else
                 {
-                    if (notesManager.LaneNum[1] == 0)
+                    if (notesManagerb.LaneNum[1] == 0)
                     {
-                        Judgement(GetABS(Time.time - (notesManager.NotesTime[1] + GManager.instance.StartTime)), 1);
+                        Judgement(GetABS(Time.time - (notesManagerb.NotesTime[1] + GManager.instance.StartTime)), 1);
                     }
                 }
             }
             if (Input.GetKeyDown(KeyCode.D))
             {
-                if (notesManager.LaneNum[0] == 1)
+                if (notesManagerb.LaneNum[0] == 1)
                 {
-                    Judgement(GetABS(Time.time - (notesManager.NotesTime[0] + GManager.instance.StartTime)), 0);
+                    Judgement(GetABS(Time.time - (notesManagerb.NotesTime[0] + GManager.instance.StartTime)), 0);
                 }
                 else
                 {
-                    if (notesManager.LaneNum[1] == 1)
+                    if (notesManagerb.LaneNum[1] == 1)
                     {
-                        Judgement(GetABS(Time.time - (notesManager.NotesTime[1] + GManager.instance.StartTime)), 1);
+                        Judgement(GetABS(Time.time - (notesManagerb.NotesTime[1] + GManager.instance.StartTime)), 1);
                     }
                 }
             }
             if (Input.GetKeyDown(KeyCode.F))
             {
-                if (notesManager.LaneNum[0] == 2)
+                if (notesManagerb.LaneNum[0] == 2)
                 {
-                    Judgement(GetABS(Time.time - (notesManager.NotesTime[0] + GManager.instance.StartTime)), 0);
+                    Judgement(GetABS(Time.time - (notesManagerb.NotesTime[0] + GManager.instance.StartTime)), 0);
                 }
                 else
                 {
-                    if (notesManager.LaneNum[1] == 2)
+                    if (notesManagerb.LaneNum[1] == 2)
                     {
-                        Judgement(GetABS(Time.time - (notesManager.NotesTime[1] + GManager.instance.StartTime)), 1);
+                        Judgement(GetABS(Time.time - (notesManagerb.NotesTime[1] + GManager.instance.StartTime)), 1);
                     }
                 }
             }
             if (Input.GetKeyDown(KeyCode.J))
             {
-                if (notesManager.LaneNum[0] == 3)
+                if (notesManagerb.LaneNum[0] == 3)
                 {
-                    Judgement(GetABS(Time.time - (notesManager.NotesTime[0] + GManager.instance.StartTime)), 0);
+                    Judgement(GetABS(Time.time - (notesManagerb.NotesTime[0] + GManager.instance.StartTime)), 0);
                 }
                 else
                 {
-                    if (notesManager.LaneNum[1] == 3)
+                    if (notesManagerb.LaneNum[1] == 3)
                     {
-                        Judgement(GetABS(Time.time - (notesManager.NotesTime[1] + GManager.instance.StartTime)), 1);
+                        Judgement(GetABS(Time.time - (notesManagerb.NotesTime[1] + GManager.instance.StartTime)), 1);
                     }
 
                 }
             }
             if (Input.GetKeyDown(KeyCode.K))
             {
-                if (notesManager.LaneNum[0] == 4)
+                if (notesManagerb.LaneNum[0] == 4)
                 {
-                    Judgement(GetABS(Time.time - (notesManager.NotesTime[0] + GManager.instance.StartTime)), 0);
+                    Judgement(GetABS(Time.time - (notesManagerb.NotesTime[0] + GManager.instance.StartTime)), 0);
                 }
                 else
                 {
-                    if (notesManager.LaneNum[1] == 4)
+                    if (notesManagerb.LaneNum[1] == 4)
                     {
-                        Judgement(GetABS(Time.time - (notesManager.NotesTime[1] + GManager.instance.StartTime)), 1);
+                        Judgement(GetABS(Time.time - (notesManagerb.NotesTime[1] + GManager.instance.StartTime)), 1);
                     }
                 }
             }
             if (Input.GetKeyDown(KeyCode.L))
             {
-                if (notesManager.LaneNum[0] == 5)
+                if (notesManagerb.LaneNum[0] == 5)
                 {
-                    Judgement(GetABS(Time.time - (notesManager.NotesTime[0] + GManager.instance.StartTime)), 0);
+                    Judgement(GetABS(Time.time - (notesManagerb.NotesTime[0] + GManager.instance.StartTime)), 0);
                 }
                 else
                 {
-                    if (notesManager.LaneNum[1] == 5)
+                    if (notesManagerb.LaneNum[1] == 5)
                     {
-                        Judgement(GetABS(Time.time - (notesManager.NotesTime[1] + GManager.instance.StartTime)), 1);
+                        Judgement(GetABS(Time.time - (notesManagerb.NotesTime[1] + GManager.instance.StartTime)), 1);
                     }
                 }
             }
 
-            if (0 == notesManager.NotesTime.Count)
+            if (0 == notesManagerb.NotesTime.Count)
             {
                 return;
             }
 
-            if (Time.time > notesManager.NotesTime[0] + 0.2f + GManager.instance.StartTime)//本来ノーツをたたくべき時間から0.2秒たっても入力がなかった場合
+            if (Time.time > notesManagerb.NotesTime[0] + 0.2f + GManager.instance.StartTime)//本来ノーツをたたくべき時間から0.2秒たっても入力がなかった場合
             {
                 message(3);
                 deleteData(0);
@@ -184,9 +184,9 @@ public class Judge : MonoBehaviour
     }
     void deleteData(int numOffset)//すでにたたいたノーツを削除する関数
     {
-        notesManager.NotesTime.RemoveAt(numOffset);
-        notesManager.LaneNum.RemoveAt(numOffset);
-        notesManager.NoteType.RemoveAt(numOffset);
+        notesManagerb.NotesTime.RemoveAt(numOffset);
+        notesManagerb.LaneNum.RemoveAt(numOffset);
+        notesManagerb.NoteType.RemoveAt(numOffset);
         GManager.instance.score = (int)Math.Round(100000 * Math.Floor(GManager.instance.ratioScore / GManager.instance.maxScore * 100000) / 100000);
         //↑new!!
         comboText.text = GManager.instance.combo.ToString();//new!!
@@ -195,7 +195,7 @@ public class Judge : MonoBehaviour
 
     void message(int judge)//判定を表示する
     {
-        Instantiate(MessageObj[judge], new Vector3(notesManager.LaneNum[0] - 2.5f, 0.76f, 1f), Quaternion.Euler(45, 0, 0));
+        Instantiate(MessageObj[judge], new Vector3(notesManagerb.LaneNum[0] - 2.5f, 0.76f, 1f), Quaternion.Euler(45, 0, 0));
     }
 }
 
