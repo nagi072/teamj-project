@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NotesManager : MonoBehaviour
+public class NotesManager_L_e : MonoBehaviour
 {
     [Serializable]
     public class Data

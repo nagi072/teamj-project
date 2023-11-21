@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NotesManager : MonoBehaviour
+public class NotesManager_L_h : MonoBehaviour
 {
     [Serializable]
     public class Data
@@ -53,7 +53,7 @@ public class NotesManager : MonoBehaviour
     void OnEnable()
     {
         noteNum = 0;
-        songName = "Let's start_e";
+        songName = "Let's start_h";
         Load(songName);
     }
 
