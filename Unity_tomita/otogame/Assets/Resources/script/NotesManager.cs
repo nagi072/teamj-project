@@ -40,7 +40,7 @@ public class NotesManager : MonoBehaviour
     void OnEnable()
     {
         noteNum = 0;
-        songName = "DIRTY PUNCH";
+        songName = "BPM=RT";
         Load(songName);
     }
 
