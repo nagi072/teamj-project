@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NotesManager : MonoBehaviour
+public class NotesManager_B : MonoBehaviour
 {
     [Serializable]
     public class Data
@@ -31,16 +31,29 @@ public class NotesManager : MonoBehaviour
     public List<int> NoteType = new List<int>();
     public List<float> NotesTime = new List<float>();
     public List<GameObject> NotesObj = new List<GameObject>();
+    //public List<GameObject> LongNotesObj = new List<GameObject>();
+
 
     [SerializeField] private float NotesSpeed;
     [SerializeField] GameObject noteObj;
+   // [SerializeField] GameObject longnoteObj;
+
+
+    /*int[] notetype = { 1, 2 };
+
+    void Main()
+    {
+       string str = notetype[];
+       string target = notetype[1];
+
+    }*/
 
 
 
     void OnEnable()
     {
         noteNum = 0;
-        songName = "DIRTY PUNCH";
+        songName = "BPM=RT";
         Load(songName);
     }
 
@@ -64,6 +77,19 @@ public class NotesManager : MonoBehaviour
             float y = NotesTime[i] * NotesSpeed;
             NotesObj.Add(Instantiate(noteObj, new Vector3(inputJson.notes[i].block - 2.5f, y, -1f), Quaternion.identity));
         }
+
+       /* for (int j = 0; j < inputJson.notes.Length; j++)
+        {
+            float kankaku = 60 / (inputJson.BPM * (float)inputJson.notes[j].LPB);
+            float beatSec = kankaku * (float)inputJson.notes[j].LPB;
+            float time = (beatSec * inputJson.notes[j].num / (float)inputJson.notes[j].LPB) + inputJson.offset * 0.02f;
+            NotesTime.Add(time);
+            LaneNum.Add(inputJson.notes[j].block);
+            NoteType.Add(inputJson.notes[j].type);
+
+            float y = NotesTime[j] * NotesSpeed;
+            LongNotesObj.Add(Instantiate(longnoteObj, new Vector3(inputJson.notes[j].block - 2.5f, y, -1f), Quaternion.identity));
+        }*/
 
     }
 }

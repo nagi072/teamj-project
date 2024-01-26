@@ -1,11 +1,11 @@
 using System;
 using UnityEngine;
 using TMPro;//new!!
-public class Judge : MonoBehaviour
+public class Judge_L_h : MonoBehaviour
 {
     //変数の宣言
     [SerializeField] private GameObject[] MessageObj;//プレイヤーに判定を伝えるゲームオブジェクト
-    [SerializeField] NotesManager notesManager;//スクリプト「notesManager」を入れる変数
+    [SerializeField] NotesManager_L_h notesManager;//スクリプト「notesManager」を入れる変数
 
     [SerializeField] TextMeshProUGUI comboText;//new!!
     [SerializeField] TextMeshProUGUI scoreText;//new!!
