@@ -17,8 +17,8 @@ public class toFinish : MonoBehaviour
     // コルーチン本体
     private IEnumerator owari()
     {
-        // 3秒間待つ
-        yield return new WaitForSeconds(20f);
+        // 秒間待つ
+        yield return new WaitForSeconds(135f);
 
         SceneManager.LoadScene("rizaruto");
     }
