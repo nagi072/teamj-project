@@ -11,7 +11,7 @@ public class MusicManager2 : MonoBehaviour
     void Start()
     {
         GManager.instance.Start = false;
-        songName = "BPM=RT";
+        songName = "t+pazolite - BPM=RT";
         audio = GetComponent<AudioSource>();
         Music = (AudioClip)Resources.Load("Musics/" + songName);
         played = false;
