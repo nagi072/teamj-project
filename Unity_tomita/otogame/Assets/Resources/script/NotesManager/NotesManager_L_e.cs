@@ -57,10 +57,10 @@ public class NotesManager_L_e : MonoBehaviour
         Load(songName);
     }
 
-    private void Load(string SongName)
+    private void Load(string songName)
     {
 
-        string inputString = Resources.Load<TextAsset>(SongName).ToString();
+        string inputString = Resources.Load<TextAsset>(songName).ToString();
         Data inputJson = JsonUtility.FromJson<Data>(inputString);
 
         noteNum = inputJson.notes.Length;
