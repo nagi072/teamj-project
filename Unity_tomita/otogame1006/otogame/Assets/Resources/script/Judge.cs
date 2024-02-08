@@ -26,15 +26,11 @@ public class Judge : MonoBehaviour
                 return;
             }
 
-            if (Input.GetKeyDown(KeyCode.S))//〇キーが押されたとき
+            if (Input.GetKeyDown(KeyCode.S))
             {
-                if (notesManager.LaneNum[0] == 0)//押されたボタンはレーンの番号とあっているか？
+                if (notesManager.LaneNum[0] == 0)
                 {
                     Judgement(GetABS(Time.time - (notesManager.NotesTime[0] + GManager.instance.StartTime)), 0);
-                    /*
-                    本来ノーツをたたく場所と実際にたたいた場所がどれくらいずれているかを求め、
-                    その絶対値をJudgement関数に送る
-                    */
                 }
                 else
                 {
@@ -121,7 +117,7 @@ public class Judge : MonoBehaviour
                 return;
             }
 
-            if (Time.time > notesManager.NotesTime[0] + 0.2f + GManager.instance.StartTime)//本来ノーツをたたくべき時間から0.2秒たっても入力がなかった場合
+            if (Time.time > notesManager.NotesTime[0] + 0.2f + GManager.instance.StartTime)
             {
                 message(3);
                 deleteData(0);
@@ -137,33 +133,33 @@ public class Judge : MonoBehaviour
 
 
         audio.PlayOneShot(hitSound);
-        if (timeLag <= 0.05)//本来ノーツをたたくべき時間と実際にノーツをたたいた時間の誤差が0.1秒以下だったら
+        if (timeLag <= 0.05)
         {
             Debug.Log("Perfect");
             message(0);
-            GManager.instance.ratioScore += 5;//new!!
+            GManager.instance.ratioScore += 5;
             GManager.instance.perfect++;
             GManager.instance.combo++;
             deleteData(numOffset);
         }
         else
         {
-            if (timeLag <= 0.08)//本来ノーツをたたくべき時間と実際にノーツをたたいた時間の誤差が0.15秒以下だったら
+            if (timeLag <= 0.08)
             {
                 Debug.Log("Great");
                 message(1);
-                GManager.instance.ratioScore += 3;//new!!
+                GManager.instance.ratioScore += 3;
                 GManager.instance.great++;
                 GManager.instance.combo++;
                 deleteData(numOffset);
             }
             else
             {
-                if (timeLag <= 0.10)//本来ノーツをたたくべき時間と実際にノーツをたたいた時間の誤差が0.2秒以下だったら
+                if (timeLag <= 0.10)
                 {
                     Debug.Log("Bad");
                     message(2);
-                    GManager.instance.ratioScore += 1;//new!!
+                    GManager.instance.ratioScore += 1;
                     GManager.instance.bad++;
                     GManager.instance.combo = 0;
                     deleteData(numOffset);
@@ -171,7 +167,7 @@ public class Judge : MonoBehaviour
             }
         }
     }
-    float GetABS(float num)//引数の絶対値を返す関数
+    float GetABS(float num)
     {
         if (num >= 0)
         {

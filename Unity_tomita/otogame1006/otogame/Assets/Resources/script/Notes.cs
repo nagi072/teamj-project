@@ -8,10 +8,6 @@ public class Notes : MonoBehaviour
     float NoteSpeed = 8;
     bool start;
 
-    //void Start()
-    //{
-      //  NoteSpeed = GManager.instance.noteSpeed;
-    //}
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
